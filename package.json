@@ -1,0 +1,24 @@
+{
+  "name": "karma-jasmine-order-reporter",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "description": "Reports Jasmine order seed that was used to randomize specs in Karma Runner",
+  "author": "Dzmitry Shyndzin <shindindmitry@gmail.com> (https://github.com/dmitryshindin)",
+  "bugs": "https://github.com/dmitryshindin/karma-jasmine-order-reporter/issues",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/dmitryshindin/karma-jasmine-order-reporter"
+  },
+  "keywords": [
+    "test",
+    "karma",
+    "karma-plugin",
+    "karma-adapter",
+    "karma-reporter",
+    "karma-jasmine",
+    "jasmine",
+    "order",
+    "seed"
+  ],
+  "license": "MIT"
+}
