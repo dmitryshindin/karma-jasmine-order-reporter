@@ -2,7 +2,7 @@
 
 Reports Jasmine order seed that was used to randomize specs in Karma Runner
 
-[![npm version](https://badge.fury.io/js/karma-jasmine-order-reporter.svg)](https://badge.fury.io/js/karma-jasmine-order-reporter)
+[![npm version](https://badge.fury.io/js/karma-jasmine-order-reporter.svg)](//npmjs.com/package/karma-jasmine-order-reporter)
 
 Use this plugin to get information about `Jasmine` generated seed. It reports seed info twice:
 
@@ -22,7 +22,7 @@ Also it will report seed on `Jasmine` start regardless of `Karma` or browser cra
 ## Installation
 
 ```bash
-$ npm i karma-jasmine-order-reporter --save-dev
+$ npm install karma-jasmine-order-reporter --save-dev
 ```
 
 or
@@ -33,7 +33,7 @@ $ yarn add karma-jasmine-order-reporter --dev
 
 ## Usage
 
-Update your `karma.conf.js` file
+Update your `karma.conf.js` file as follows:
 
 ```js
 module.exports = function(config) {
