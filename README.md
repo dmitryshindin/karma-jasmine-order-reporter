@@ -2,6 +2,8 @@
 
 Reports Jasmine order seed that was used to randomize specs in Karma Runner
 
+[![npm version](https://badge.fury.io/js/karma-jasmine-order-reporter.svg)](//npmjs.com/package/karma-jasmine-order-reporter)
+
 Use this plugin to get information about `Jasmine` generated seed. It reports seed info twice:
 
 1) When `Jasmine` started:
