@@ -8,12 +8,12 @@ Use this plugin to get information about `Jasmine` generated seed. It reports se
 
 1) When `Jasmine` started:
 ```
-JASMINE ORDER: Started with seed 12345
+JASMINE ORDER REPORTER: Started with seed 12345
 ```
 
 2) When `Jasmine` finished spec run:
 ```
-JASMINE ORDER: Done with seed 12345
+JASMINE ORDER REPORTER: Done with seed 12345
 ```
 
 This plugin can be useful in scenarios when you have flaky tests, that are failing only on specific seeds.
