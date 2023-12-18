@@ -7,7 +7,7 @@ var OrderReporter = function (config, baseReporterDecorator, emitter) {
 
     baseReporterDecorator(this);
 
-    const reporterName = 'karma-jasmine-order-reporter';
+    const reporterName = 'jasmine-order';
     const hasTrailingReporters = config.reporters.slice(-1).pop() !== reporterName;
 
     // Copied from "karma-jasmine-diff-reporter" source code:
