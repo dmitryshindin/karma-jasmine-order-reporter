@@ -1,11 +1,22 @@
 var createPattern = function (path) {
-    return { pattern: path, included: true, served: true, watched: false };
+    return {pattern: path, included: true, served: true, watched: false};
 };
 
 var OrderReporter = function (config, baseReporterDecorator, emitter) {
     const files = config.files;
 
     baseReporterDecorator(this);
+
+    // Copied from "karma-jasmine-diff-reporter" source code:
+    // In case, when multiple reporters are used in conjunction
+    // with initSourcemapReporter, they both will show repetitive log
+    // messages when displaying everything that supposed to write to terminal.
+    // The config option allows for these repetitive logs to be suppressed
+    // when using the reporter under these circumstances
+    if(config.disableJasmineOrderStandardLogging) {
+        this.writeCommonMsg = function () {
+        };
+    }
 
     files.splice(
         files.length - 1,
@@ -21,7 +32,7 @@ var OrderReporter = function (config, baseReporterDecorator, emitter) {
         if (!data || data.type !== 'Jasmine Order Reporter') {
             return
         }
-        reporter.onBrowserLog(browser, data.seedInfo, data.type);
+        reporter.write(`\n${data.type.toUpperCase()}: ${data.seedInfo}\n`);
     });
 };
 
