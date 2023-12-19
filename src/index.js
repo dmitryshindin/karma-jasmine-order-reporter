@@ -7,16 +7,13 @@ var OrderReporter = function (config, baseReporterDecorator, emitter) {
 
     baseReporterDecorator(this);
 
-    const hasOtherReporters = config.reporters.length > 1;
-
     // Copied from "karma-jasmine-diff-reporter" source code:
     // In case, when multiple reporters are used in conjunction
     // with initSourcemapReporter, they both will show repetitive log
     // messages when displaying everything that supposed to write to terminal.
-    // So just suppress any logs from initSourcemapReporter by doing nothing on
-    // browser log, because it is an utility reporter,
-    // unless it's alone in the "reporters" option and base reporter is used.
-    if(hasOtherReporters) {
+    // The config option allows for these repetitive logs to be suppressed
+    // when using the reporter under these circumstances
+    if(config.disableJasmineOrderStandardLogging) {
         this.writeCommonMsg = function () {
         };
     }
