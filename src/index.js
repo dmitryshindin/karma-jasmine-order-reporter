@@ -1,5 +1,5 @@
 var createPattern = function (path) {
-    return { pattern: path, included: true, served: true, watched: false };
+    return {pattern: path, included: true, served: true, watched: false};
 };
 
 var OrderReporter = function (config, baseReporterDecorator, emitter) {
@@ -7,8 +7,7 @@ var OrderReporter = function (config, baseReporterDecorator, emitter) {
 
     baseReporterDecorator(this);
 
-    const reporterName = 'jasmine-order';
-    const hasTrailingReporters = config.reporters.slice(-1).pop() !== reporterName;
+    const hasOtherReporters = config.reporters.length > 1;
 
     // Copied from "karma-jasmine-diff-reporter" source code:
     // In case, when multiple reporters are used in conjunction
@@ -17,8 +16,9 @@ var OrderReporter = function (config, baseReporterDecorator, emitter) {
     // So just suppress any logs from initSourcemapReporter by doing nothing on
     // browser log, because it is an utility reporter,
     // unless it's alone in the "reporters" option and base reporter is used.
-    if (hasTrailingReporters) {
-        this.writeCommonMsg = function () {};
+    if(hasOtherReporters) {
+        this.writeCommonMsg = function () {
+        };
     }
 
     files.splice(
@@ -35,7 +35,7 @@ var OrderReporter = function (config, baseReporterDecorator, emitter) {
         if (!data || data.type !== 'Jasmine Order Reporter') {
             return
         }
-        reporter.onBrowserLog(browser, data.seedInfo, data.type);
+        reporter.write(`\n${data.type.toUpperCase()}: ${data.seedInfo}\n`);
     });
 };
 
