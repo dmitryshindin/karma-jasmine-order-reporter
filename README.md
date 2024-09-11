@@ -46,7 +46,8 @@ module.exports = function(config) {
     reporters: [
       // other Karma Reporters
       'jasmine-order'
-    ]
+    ],
+    disableJasmineOrderStandardLogging: true // Enable this when using with order loggers that log output to the console, to prevent duplicate loggin
   });
 };
 ```
